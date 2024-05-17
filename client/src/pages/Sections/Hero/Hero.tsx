@@ -28,7 +28,7 @@ export default function Hero() {
       translateX:300
     }
   }
-  function handleSubmit(e: { target: any; preventDefault: () => void; }) {
+  function handleSubmit(e: any) {
     const item = e.target
     e.preventDefault()
     const data =qs.stringify({
