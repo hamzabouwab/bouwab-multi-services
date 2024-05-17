@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: product;
+  src: url('./assets//fonts/Product.ttf');
+}
+
+@font-face {
+  font-family: wix;
+  src: url('./assets//fonts/Wix.ttf');
+}
+
+@font-face {
+  font-family: montserrat;
+  src: url('./assets//fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+
+:root {
+
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --section-title-size: 24px;
+  --button-padding: 4px 11px;
+  --button-border-radius: 8px;
+  --button-background-color: rgba(255, 255, 255, 0.089);
+  --active-color: #fafafa;
+  @apply text-slate-600;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden !important;
+}
+
+button {
+  cursor: pointer;
+  border-radius: var(--button-border-radius);
+  background-color: var(--button-background-color);
+  padding: var(--button-padding);
+  /* @apply m-5; */
+}
+
+*,
+*::before,
+*::after {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'montserrat';
+}
+
+@media (max-width: 768px) {
+  .list-item {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+.container {
+
+  max-width: 1200px;
+  margin-inline: auto;
+  @apply px-5
+}
+
+section {
+  @apply py-14 lg:py-32 max-w-[100vw] !important;
+}
+
+section h1 {
+  @apply text-slate-200;
+}
+
+
+input,
+select,
+textarea {
+  @apply outline-none border border-slate-200 text-slate-700 font-bold text-sm placeholder:text-slate-500 placeholder:font-medium placeholder:text-xs
+}
+
+select .wrapper {
+  display: flex;
+  flex-direction: column;
+  padding-block: 30px;
+}
+
+#about .container {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  gap: 80px;
+  text-align: center;
+}
+
+#about .container li {
+  text-align: start;
+}
+
+
+input,
+select {
+  @apply text-xs;
+}

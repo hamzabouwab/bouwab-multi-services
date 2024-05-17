@@ -1,0 +1,13 @@
+.shadow-animation{
+    animation-name: shadow;
+    animation-fill-mode:forwards ;
+}
+@keyframes shadow {
+    0% {
+        @apply rounded-[0px] shadow
+    }
+
+    100% {
+        @apply rounded-[20px] shadow-2xl
+    }
+}

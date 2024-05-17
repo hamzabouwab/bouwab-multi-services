@@ -1,0 +1,14 @@
+{
+  "scripts": {
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm start",
+    "start": "npm run client && npm run server"
+  },
+  "name": "bouwab-multi-services",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
