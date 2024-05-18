@@ -7,7 +7,7 @@ import cors from "cors";
 import { config } from "dotenv";
 import { default as mongoose } from "mongoose";
 
-config({ path: "../.env" }); 
+config({ path: "./.env" }); 
 
 const app = express();
  

@@ -90,8 +90,9 @@ section h1 {
 
 input,
 select,
-textarea {
-  @apply outline-none border border-slate-200 text-slate-700 font-bold text-sm placeholder:text-slate-500 placeholder:font-medium placeholder:text-xs
+textarea,
+option {
+  @apply outline-none border w-full rounded-md p-[11px] border-slate-200 text-slate-600 font-bold text-xs placeholder:text-slate-500 placeholder:font-semibold m-0
 }
 
 select .wrapper {
@@ -110,10 +111,4 @@ select .wrapper {
 
 #about .container li {
   text-align: start;
-}
-
-
-input,
-select {
-  @apply text-xs;
 }
