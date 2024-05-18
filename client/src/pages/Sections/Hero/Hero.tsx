@@ -23,7 +23,7 @@ export default function Hero(){
     }
   }
 
-function handleSubmit(e: FormEvent<HTMLFormElement>) {
+function handleSubmit(e: any) {
     setSubmit(true)
     const item= e.target 
     e.preventDefault()
@@ -38,7 +38,7 @@ function handleSubmit(e: FormEvent<HTMLFormElement>) {
     })  
     axios.post(`${import.meta.env.VITE_api_url}/devis/?${data}`).then(result=>{
       setSubmit(false)
-      console.log(`${import.meta.env.VITE_api_url}/devis/?${data}`)
+      console.log(result.data)
     }).catch(err=>{
       console.log(err.message)
     })
