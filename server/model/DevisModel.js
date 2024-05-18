@@ -37,6 +37,6 @@ const devisSchema = new Schema(
   }
 );
 
-const DevisModel = model('devis',devisSchema)
+const DevisModel = model('collection',devisSchema)
 
 export default DevisModel

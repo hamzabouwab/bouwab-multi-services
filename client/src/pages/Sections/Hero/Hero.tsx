@@ -1,24 +1,18 @@
 import { ArrowLongRightIcon, SparklesIcon } from "@heroicons/react/24/outline";
-
 import './style.css'
 import { splitStringWithRegex } from "../../../utils/heroSectionFunctions";
 import {  motion,Variants } from "framer-motion";
+import {Spin} from 'antd'
 import { useMediaQuery } from "@react-hook/media-query";
 import qs from 'qs'
 import axios from 'axios'
-export default function Hero() {
-  // const [devisForm,setDevisForm] = useState<devis>({
-    //   nom:'',
-    //   prenom:'',
-    //   tel:'',
-    //   email:'',
-    //   adresse:'',
-    //   clientType:'',
-    //   message:''
-    // })
+import { FormEvent, useState } from "react";
+export default function Hero(){
+
   const isMobile = useMediaQuery('(max-width:768px)')
   const heroTitle : string[]  = splitStringWithRegex("société MULTI SERVICES");
-  const variants : Variants = {
+  const [submit,setSubmit] = useState<boolean>(false)
+    const variants : Variants = {
     visible:{
       opacity:1,
       translateX:0,
@@ -28,8 +22,10 @@ export default function Hero() {
       translateX:300
     }
   }
-  function handleSubmit(e: any) {
-    const item = e.target
+
+function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    setSubmit(true)
+    const item= e.target 
     e.preventDefault()
     const data =qs.stringify({
       "nom":item[0].value,
@@ -40,9 +36,9 @@ export default function Hero() {
       "typeClient":item[5].value,
       "message":item[6].value,
     })  
-    
     axios.post(`${import.meta.env.VITE_api_url}/devis/?${data}`).then(result=>{
-      console.log(result.data)
+      setSubmit(false)
+      console.log(`${import.meta.env.VITE_api_url}/devis/?${data}`)
     }).catch(err=>{
       console.log(err.message)
     })
@@ -94,29 +90,29 @@ export default function Hero() {
               <hr className='w-full  mx-auto mb-6 border-[1px] border-slate-100 bg-transparent rounded-full'  />
               <div className="w-full flex gap-4">
                 <div className="w-1/2 mb-4">
-                  <input type="text" placeholder='Nom' className='rounded-md p-2 w-full bg-white shadow-sm' />
+                  <input type="text" placeholder='Nom' className='rounded-md text-sm p-2 w-full bg-white shadow-sm' />
                 </div>
                 <div className="w-1/2">
-                  <input type="text" placeholder='Prénom' className='rounded-md p-2 w-full bg-white shadow-sm' />
+                  <input type="text" placeholder='Prénom' className='rounded-md text-sm p-2 w-full bg-white shadow-sm' />
 
 
                 </div>
               </div>
               <div className="w-full mb-4">
-                <input type="text" placeholder='Téléphone' className='w-full rounded-md p-2 bg-white shadow-sm' />
+                <input type="text" placeholder='Téléphone' className='w-full text-sm rounded-md p-2 bg-white shadow-sm' />
               </div>
               <div className="w-full mb-4">
-                <input type="text" placeholder='Email' className='w-full rounded-md p-2 bg-white shadow-sm' />
+                <input type="text" placeholder='Email' className='w-full text-sm rounded-md p-2 bg-white shadow-sm' />
 
 
               </div>
               <div className="w-full mb-4">
-                <input type="text" placeholder='Addresse' className='w-full rounded-md p-2 bg-white shadow-sm' />
+                <input type="text" placeholder='Addresse' className='w-full text-sm rounded-md p-2 bg-white shadow-sm' />
 
 
               </div>
               <div className="w-full mb-4 p-0 shadow-sm  overflow-hidden">
-                <select className='w-full outline-none  font-extrabold text-start py-2 px-2 m-0 text-slate-700 rounded-md text-xs placeholder:text-xs' name="" id=""  >
+                <select className='w-full outline-none  font-extrabold text-start py- px-2 m-0 text-slate-700 rounded-md text-sm placeholder:text-xs' name="" id=""  >
                   <option className='text-xs text-slate-500 font-bold ' value="professionnel">Client professionnel</option>
                   <option className='text-xs text-slate-500 font-bold ' value="particulier">Client Particulier</option>
                   <option className='text-xs text-slate-500 font-bold ' value="autre">Autre</option>
@@ -125,12 +121,12 @@ export default function Hero() {
 
               </div>
               <div className="w-full mb-4">
-                <textarea placeholder='Message' className='w-full rounded-md p-2 py-4 bg-white shadow-sm' />
+                <textarea placeholder='Message' className='w-full text-sm rounded-md px-2 py-2 bg-white shadow-sm' />
 
 
               </div>
               <div className="w-full">
-                <button className='py-3 w-full mx-auto rounded-full bg-slate-700 text-slate-50 font-bold duration-300  text-xs hover:bg-slate-600'>Envoyer</button>
+                <button className='py-3 w-full mx-auto rounded-full bg-slate-700 text-slate-50 font-bold duration-300  text-xs hover:bg-slate-600'>{submit ? <Spin  /> : 'Envoyer'}</button>
 
 
               </div>
