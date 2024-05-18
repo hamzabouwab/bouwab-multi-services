@@ -15,7 +15,6 @@ import { useMediaQuery } from "@react-hook/media-query";
   const [scrollOffset, setScrollOffset] = useState(0);
   const { scrollYProgress } = useScroll();
   useEffect(() => {
-    console.log(window.screen.width)
     const handleScroll = () => {
       const scrollY = window.scrollY;
 
