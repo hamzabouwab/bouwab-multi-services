@@ -23,7 +23,7 @@ app.use("/devis", DevisRouter);
 app.listen(Port, () => {
   console.log(`server is running on port :${Port}`);
 });
-mongoose.connect(database_string).catch(err=>{
+mongoose.connect(database_string,{dbName:'concours'}).catch(err=>{
   console.log(err)
 }); 
 mongoose.connection.on("connected", () => {
