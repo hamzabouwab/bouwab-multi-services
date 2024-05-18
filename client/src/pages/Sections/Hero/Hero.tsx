@@ -6,7 +6,7 @@ import {Spin} from 'antd'
 import { useMediaQuery } from "@react-hook/media-query";
 import qs from 'qs'
 import axios from 'axios'
-import { FormEvent, useState } from "react";
+import {  useState } from "react";
 export default function Hero(){
 
   const isMobile = useMediaQuery('(max-width:768px)')
