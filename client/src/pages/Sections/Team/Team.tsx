@@ -13,9 +13,9 @@ const Team = ({isMobile}:{isMobile:boolean}) => {
                     <img className="absolute object-cover min-h-full min-w-full top-1/2 -translate-y-1/2" src={'https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&w=600'} alt="Bonnie Avatar"/>
                 </div>
               <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
-                  <a href="#">Mathis Girard</a>
+                  <a href="#">Nom Co-Fondateur</a>
               </h3>
-              <p>CEO/Fondateur</p>
+              <p>CEO/Co-Fondateur</p>
               <ul className="flex justify-center mt-4 space-x-4">
                   <li>
                       <a href="#" className="text-[#39569c] hover:text-gray-900 ">
@@ -39,9 +39,9 @@ const Team = ({isMobile}:{isMobile:boolean}) => {
               <img className="absolute object-cover min-h-full min-w-full top-1/2 -translate-y-1/2 " src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/helene-engels.png" alt="Helene Avatar" />
         </div>
               <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
-                  <a href="#">Léa Dubois</a>
+                  <a href="#">Nom Fondateur</a>
               </h3>
-              <p>CTO/Co-fondateur</p>
+              <p>CEO/Fondateur</p>
               <ul className="flex justify-center mt-4 space-x-4">
                   <li>
                       <a href="#" className="text-[#39569c] hover:text-gray-900 ">
@@ -67,9 +67,9 @@ const Team = ({isMobile}:{isMobile:boolean}) => {
               <img className=" object-cover absolute translate-x-1/2 -left-1/2 min-h-full min-w-full " src={'https://images.pexels.com/photos/837306/pexels-photo-837306.jpeg?auto=compress&cs=tinysrgb&w=600'} alt="Bonnie Avatar"/>
         </div>
               <h3 className="mb-1 text-2xl font-bold tracking-tight text-gray-900 ">
-                  <a href="#">Julien Dupont</a>
+                  <a href="#">Nom Co-Fondateur</a>
               </h3>
-              <p>CEO/Fondateur</p>
+              <p>CTO/Co-Fondateur</p>
               <ul className="flex justify-center mt-4 space-x-4">
                   <li>
                       <a href="#" className="text-[#39569c] hover:text-gray-900 e">

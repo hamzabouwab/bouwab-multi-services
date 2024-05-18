@@ -14,7 +14,7 @@ const Navbar = ({scrollOffset}:{scrollOffset:number}) => {
       <nav className="flex items-center  justify-between  py-4 w-full" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="#" className="-m-1.5 p-1.5">
-            <h2 className='font-bold text-lg text-slate-700'>Logo</h2>
+            <h2 className='font-bold text-lg text-slate-700'>{/*Logo*/}</h2>
           </a>
         </div>
         <div className="flex lg:hidden">
