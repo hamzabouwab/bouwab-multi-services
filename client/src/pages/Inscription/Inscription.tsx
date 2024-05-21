@@ -3,9 +3,7 @@ import type { FormProps } from 'antd';
 import { Button, Checkbox, Form, Input, Typography } from 'antd';
 import axios from 'axios';
 
-
-
-const {VITE_api_url} = import.meta.env
+const { VITE_api_url } = import.meta.env;
 const Inscription: React.FC = () => {
 	type FieldType = {
 		username?: string;
@@ -20,12 +18,15 @@ const Inscription: React.FC = () => {
 		console.log('Failed:', errorInfo);
 	};
 	const onFinish: FormProps<FieldType>['onFinish'] = (values) => {
-        delete values.remember
-		axios.post(`${VITE_api_url}/user/`,values).then(result=>{
-            console.log(result.data)
-        }).catch(err=>{
-            console.log(err.message)
-        })
+		delete values.remember;
+		axios
+			.post(`${VITE_api_url}/user/`, values)
+			.then((result) => {
+				console.log(result.data);
+			})
+			.catch((err) => {
+				console.log(err.message);
+			});
 	};
 	useEffect(() => {
 		console.log(VITE_api_url);
@@ -35,10 +36,10 @@ const Inscription: React.FC = () => {
 			<Typogr level={2}>S'INSCRIRE</Typogr>
 			<Form
 				name='inscription'
+				labelAlign={'left'}
 				labelCol={{ span: 10 }}
-				wrapperCol={{ span: 16 }}
-				className='p-10 rounded-2xl border bg-white shadow-lg'
-				style={{ maxWidth: 1200 }}
+				wrapperCol={{ span: 14 }}
+				className='p-10 rounded-3xl border bg-slate-50 shadow-lg'
 				initialValues={{ remember: true }}
 				onFinish={onFinish}
 				onFinishFailed={onFinishFailed}
@@ -47,40 +48,48 @@ const Inscription: React.FC = () => {
 				<Form.Item<FieldType>
 					label="Nom d'utilisateur"
 					name='username'
-					className='font-bold'
-					rules={[{ required: true, message: 'Please input your username!' }]}
+					className='font-semibold text-slate-700'
+					rules={[
+						{
+							required: true,
+							message: 'Please input your username!',
+						},
+					]}
 				>
-					<Input />
+					<Input className='font-medium' />
 				</Form.Item>
 				<Form.Item<FieldType>
 					label='email'
 					name='email'
-					className='font-bold'
+					className='font-semibold'
 					rules={[{ required: true, message: 'Please input your email!' }]}
 				>
-					<Input type='email' />
+					<Input type='email' className='font-medium' />
 				</Form.Item>
 
 				<Form.Item<FieldType>
 					label='Password'
 					name='password'
-					className='font-bold'
+					className='font-semibold'
 					rules={[{ required: true, message: 'Please input your password!' }]}
 				>
-					<Input.Password />
+					<Input.Password className='font-medium' />
 				</Form.Item>
 
 				<Form.Item<FieldType>
 					name='remember'
 					valuePropName='checked'
-					wrapperCol={{ offset: 8, span: 16 }}
+					labelAlign='right'
+					wrapperCol={{ span: 24 }}
 				>
-					<Checkbox>Remember me</Checkbox>
+					<Checkbox className='font-semibold text-xs text-blue-600'>
+						Remember me
+					</Checkbox>
 				</Form.Item>
 
-				<Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-					<Button type='primary' htmlType='submit'>
-						Submit
+				<Form.Item wrapperCol={{ span: 24 }}>
+					<Button type='primary' htmlType='submit' style={{ width: '100%' }}>
+						s'inscrire
 					</Button>
 				</Form.Item>
 			</Form>
