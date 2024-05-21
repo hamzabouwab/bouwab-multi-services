@@ -6,10 +6,11 @@ import DevisRouter from "./router/DevisRouter.js";
 import cors from "cors";
 import { config } from "dotenv";
 import { default as mongoose } from "mongoose";
+import UserRouter from "./router/UserRouter.js";
 
 config({ path: "./.env" }); 
 
-const app = express();
+const app = express(); 
  
 app.use(express.json());
 
@@ -20,6 +21,7 @@ const { PORT, database_string } = process.env;
 
 const Port = PORT || 3002; 
 app.use("/devis", DevisRouter); 
+app.use("/user", UserRouter); 
 app.listen(Port, () => {
   console.log(`server is running on port :${Port}`);
 });

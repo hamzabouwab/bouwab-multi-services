@@ -32,11 +32,10 @@ const devisSchema = new Schema(
     },
   },
   {
-    collection:'devis',
     timestamps:true
   }
 );
 
-const DevisModel = model('collection',devisSchema)
+const DevisModel = model('devis',devisSchema)
 
 export default DevisModel
