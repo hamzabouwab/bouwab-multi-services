@@ -65,7 +65,7 @@ export default function Hero() {
 					</div>
 					<div className=' py-32 sm:py-48 lg:py-40 z-5'>
 						<div className='text-center lg:text-start'>
-							<h1 className='text-3xl mb-10 font-[900] tracking-normal text-gray-600 sm:text-5xl'>
+							<h1 className='text-3xl mb-6 font-[900] tracking-normal text-gray-600 sm:text-5xl'>
 								{heroTitle.map((item, index) => {
 									return (
 										<motion.span
@@ -81,7 +81,7 @@ export default function Hero() {
 									);
 								})}
 							</h1>
-							<p className='mt-3  lg:text-sm uppercase font-bold max-w-[70vw] mx-auto text-sm lg:font-extrabold tracking-wide leading-6 text-slate-500'>
+							<p className='leading-6 lg:text-sm uppercase font-bold lg:max-w-[70vw] max-w-[80vw]  mx-auto text-sm lg:font-extrabold tracking-wide text-slate-500'>
 								Votre Solution Tout-en-Un pour un Environnement
 								<br />
 								Plus{' '}
@@ -107,11 +107,11 @@ export default function Hero() {
 						</div>
 					</div>
 
-					<div className='flex justify-center sm:flex-col sm:items-end z-10 pt-10 lg:pt-0 '>
+					<div className='flex justify-center sm:flex-col sm:items-end z-10 pt-10 lg:pt-2 '>
 						<form
 							method='post'
 							action=''
-							className='lg:py-10 lg:px-10 w-full mx-auto lg:bg-slate-50 duration-500 shadow-none lg:shadow-2xl rounded-3xl lg:mb-10'
+							className='lg:py-6 lg:px-10 w-full mx-auto lg:bg-slate-50 duration-500 shadow-none lg:shadow-2xl rounded-3xl lg:mb-10'
 							onSubmit={handleSubmit}
 						>
 							<h1 className='text-slate-600 font-bold mb-4 text-lg text-center '>

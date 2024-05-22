@@ -39,11 +39,7 @@ const Contact = () => {
 									initial={!isMobile ? 'initial' : ''}
 								>
 									<div className='w-full mb-4'>
-										<input
-											type='text'
-											placeholder='Nom Complet'
-											
-										/>
+										<input type='text' placeholder='Nom Complet' />
 									</div>
 								</motion.div>
 								<motion.div
@@ -52,11 +48,7 @@ const Contact = () => {
 									whileInView={'animate'}
 									initial={'initial'}
 								>
-									<input
-										type='text'
-										placeholder='Email'
-										
-									/>
+									<input type='text' placeholder='Email' />
 								</motion.div>
 								<motion.div
 									className='w-full mb-4'
@@ -64,11 +56,7 @@ const Contact = () => {
 									whileInView={'animate'}
 									initial={'initial'}
 								>
-									<input
-										type='text'
-										placeholder='Objet'
-										
-									/>
+									<input type='text' placeholder='Objet' />
 								</motion.div>
 								<motion.div
 									className='w-full mb-2'
@@ -76,9 +64,7 @@ const Contact = () => {
 									whileInView={'animate'}
 									initial={'initial'}
 								>
-									<textarea
-										placeholder='Message'
-									/>
+									<textarea placeholder='Message' />
 								</motion.div>
 								<motion.div
 									className='w-full'

@@ -15,7 +15,6 @@ const authToken = (req, res, next) => {
     if (err) {
       return res.json(err.message).sendStatus(403); 
     } 
-    req.user = user;
     next();
   });
 };
